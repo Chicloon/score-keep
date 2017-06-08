@@ -24,7 +24,7 @@ const routes = (
         <Route component={NotFound} />        
       </Switch>
       <button onClick={history.goBack}> Back </button>
-      <Redirect to='login' />
+      
     </div>
   </Router>
 );
