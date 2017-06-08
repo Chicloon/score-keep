@@ -6,10 +6,13 @@
   },
   "dependencies": {
     "babel-runtime": "^6.23.0",
+    "history": "^4.6.1",
     "meteor-node-stubs": "~0.2.0",
     "prop-types": "^15.5.10",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
-    "react-flip-move": "^2.9.14"
+    "react-flip-move": "^2.9.14",
+    "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1"
   }
 }
