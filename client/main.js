@@ -1,36 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Meteor } from 'meteor/meteor';
+import {Meteor} from 'meteor/meteor';
+import {Tracker} from 'meteor/tracker';
 
-const players = [{
-    _id: 1,
-    name: 'Mike',
-    score: 3,
-}, {
-    _id: 2,
-    name: 'Lora',
-    score: 12
-}, {
-    _id: 3,
-    name: 'Jhon',
-    score: 123
-}];
+import {Players} from './../imports/api/players';
+import App from './../imports/ui/App';
 
-const renderPlayers = () => {
-    return players.map(e => <p key={e._id}> {e.name} has {e.score} point(s).</p>);
-
-}
-
-        // {players.map(e=> <p key={e._id}> {e.name} </p>)}
 Meteor.startup(() => {
-    const title = 'Score Keep'
-    const name = 'Mike';
-    const jsx = (
-        <div>
-            <h1> {title} </h1>
-            <p> Hello, {name} from main.js</p>
-{renderPlayers()}
-        </div>
-    );
-    ReactDOM.render(jsx, document.getElementById('app'));
+  Tracker.autorun(() => {
+    let players = Players.find({}, {sort: {score: -1}}).fetch();
+    let title = 'Score Keep';
+    ReactDOM.render(<App title={title} players={players}/>, document.getElementById('app'));
+  });
 });

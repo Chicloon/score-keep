@@ -1,8 +1,6 @@
-import '../imports/utils.js';
-import someDefault, { greetUser } from '../imports/utils.js';
-import add  from '../imports/math';
+import {Meteor} from 'meteor/meteor';
+import {Players} from './../imports/api/players';
 
-console.log(add(2,2));
-console.log('Log from ./server/main.js');
+Meteor.startup(() => {
 
-console.log(greetUser(), someDefault);
+});
