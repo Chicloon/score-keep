@@ -8,7 +8,7 @@ export default class Login extends React.Component {
       <div>
         <h1>Login to Short Link</h1>
         Login form here
-        <Link to="/signup"> Have an account </Link>
+        <Link to="/signup"> Don't have account? SignUp' </Link>
       </div>
     );
   }
